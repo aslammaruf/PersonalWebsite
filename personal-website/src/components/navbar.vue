@@ -1,5 +1,5 @@
 <template>
-    <div class="navbar container">
+    <div class="container">
         <div class="row">
             <div class="col">
                 <h3>Aslam<span>Maruf</span></h3>
@@ -35,6 +35,7 @@ export default {
 ul{
     list-style: none;
     text-align: right;
+    float:right;
 }
 li{
     float:left;
