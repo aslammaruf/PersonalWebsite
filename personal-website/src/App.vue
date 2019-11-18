@@ -32,12 +32,20 @@ export default {
 </script>
 
 <style>
-  @import './assets/style/style.css';
+  @import './assets/style/reset.scss';
   @import './assets/style/bootstrap-grid.css';
   @import url('https://fonts.googleapis.com/css?family=Damion|Montserrat');
   @import url('https://fonts.googleapis.com/css?family=Roboto');
+
   body {
     font-family: 'Montserrat', sans-serif;
     /* font-family: 'Roboto', sans-serif; */
+    background-color: #1F2833;
+    color: #C5C6C7
+  }
+
+  section{
+    margin: 50px 0;
+
   }
 </style>

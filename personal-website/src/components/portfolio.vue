@@ -1,33 +1,33 @@
 <template>
-    <div class="portfolio container">
-        <h2>{{ title }}</h2>
-        <h3>{{ subtitle }}</h3>
+    <section class="portfolio">
+        <div class="container">
+            <h2>{{ title }}</h2>
+            <h3>{{ subtitle }}</h3>
 
-        <div v-for="(port, id) in portfolio" :key="id">
-            <div class="row">
-                <div class="col">
-                    <img width="100%" :src="'/portPH.png'" />
-                </div>
+            <div v-for="(port, id) in portfolio" :key="id">
+                <div class="row">
+                    <div class="col">
+                        <img width="100%" :src="'/portPH.png'" />
+                    </div>
 
-                <div class="col-8">
-                    <h4>{{ port.title }}</h4>
-                    <ul>
-                        <li v-for="(tag, id) in port.tags" :key="id">
-                            {{ tag }}
-                        </li>
-                    </ul>
-                    <p>ABOUT</p>
-                    <p v-html="port.about"></p>
+                    <div class="col-8">
+                        <h4>{{ port.title }}</h4>
+                        <ul>
+                            <li v-for="(tag, id) in port.tags" :key="id">
+                                {{ tag }}
+                            </li>
+                        </ul>
+                        <p>ABOUT</p>
+                        <p v-html="port.about"></p>
 
-                    <a :href="'{{ port.demo }}'">DEMO</a>
-                    <a :href="'{{ port.code }}'">CODE</a>
-                    
+                        <a :href="'{{ port.demo }}'">DEMO</a>
+                        <a :href="'{{ port.code }}'">CODE</a>
+                        
+                    </div>
                 </div>
             </div>
-
         </div>
-
-    </div>
+    </section>
 </template>
 
 <script>
@@ -69,6 +69,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
