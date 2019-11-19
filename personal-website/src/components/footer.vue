@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">
+    <section id="contact" class="footer">
         <div class="container">
             <ul>
                 <li v-for="(icon, id) in icons" :key="id">
@@ -9,12 +9,12 @@
 
             <p><span>Aslam Maruf</span> &copy; 2019</p>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
 export default {
-    name: "footer",
+    name: "Footer",
     data () {
         return {
             icons: [
@@ -28,13 +28,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/style/_variables.scss';
 
-$Secondary-bg-Color: #0B0C10;
-$Main-bg-Color: #1F2833;
-$Main-Text-Color: #C5C6C7;
-$Secondary-Text-Color: #66FCF1;
-$Accent-Color: #45A29E;
-
+section{
+    padding: 0;
+    margin: 0;
+}
 .footer{
     padding: 50px 0;
     background-color: $Secondary-bg-Color;

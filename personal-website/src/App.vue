@@ -31,7 +31,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  @import './assets/style/_variables.scss';
   @import './assets/style/reset.scss';
   @import './assets/style/bootstrap-grid.css';
   @import url('https://fonts.googleapis.com/css?family=Damion|Montserrat');
@@ -39,13 +40,23 @@ export default {
 
   body {
     font-family: 'Montserrat', sans-serif;
-    /* font-family: 'Roboto', sans-serif; */
-    background-color: #1F2833;
-    color: #C5C6C7
+    background-color: $Main-bg-Color;
+    color: $Main-Text-Color;
   }
 
   section{
-    margin: 50px 0;
+      padding: 50px 0;
+  }
 
+  hr {
+    width: 10%;
+    margin: 40px auto;
+  }
+
+  h2{
+    text-align: center;
+    font-size: 1.5em;
+    color: $Secondary-Text-Color;
+    margin: 20px;
   }
 </style>

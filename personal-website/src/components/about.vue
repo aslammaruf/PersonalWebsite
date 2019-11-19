@@ -1,18 +1,26 @@
 <template>
-    <div class="footer">
+    <section id="about" class="about">
         <div class="container">
-            <p>about</p>
-            <p>More Info + SKILLS</p>
+            <div class="row">
+                <div class="col">
+                </div>
+
+                <div class="col">
+                    
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
 export default {
-    name: "footer",
+    name: "About",
 }
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
+@import '@/assets/style/_variables.scss';
+
 
 </style>
