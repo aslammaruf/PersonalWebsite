@@ -1,14 +1,14 @@
 <template>
-    <section id="contact" class="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col text">
+    <section id="footer">
+        <div class="footer-contact">
+            <div class="page-wrapper">
+                <div class="section-content">
+                    <div class="contact-text">
                         <h4>Want to get in touch</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt</p>   
                     </div>
-                    <div class="col">
-                        <ul class="social-links">
+                    <div class="contact-links">
+                        <ul>
                             <li v-for="(icon, id) in icons" :key="id">
                                 <a class="social-links" :href="'{{ icon.link }}'">
                                     <div class="icon">
@@ -20,15 +20,14 @@
                         </ul>
                     </div>
                 </div>
-            </div>     
+            </div>
         </div>
-
-        <hr />
-
-        <div class="footer-bottom center">
-                <p>Website created by Aslam Maruf using VUE JS</p>
+        <hr class="footer-hr" />
+        <div class="footer-bot">
+            <div class="page-wrapper">
+                <p class="center">Website created by Aslam Maruf using VUE JS</p>
+            </div>
         </div>
-
     </section>
 </template>
 
@@ -53,41 +52,56 @@ export default {
 section{
     padding: 0;
     margin: 0;
-    
 
-    .footer-top{
-        background-color: $footer-main;
-        padding: 50px 0;
-    }
-    .footer-bottom{
-        background-color: $footer-secondary;
-        padding: 50px 0;
-        color: white;
-        font-weight: bold;
+    .section-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    hr{
-        padding: auto;
-        margin: auto;
-        width: 100%;
-        border: 1px solid rgb(31, 32, 39);
+    .footer-contact{
+        background: $footer-main;
+        padding: 50px 0;
+    }
+
+    .footer-hr{
+        padding: 0;
+        margin: 0;
+        border: 1px solid $accent;
+    }
+
+    .footer-bot{
+        background: $footer-secondary;
+        text-align: center;
+        color: $main-text;
+    }
+
+    @media screen and (max-width: 992px) {
+        .section-content{
+            grid-template-columns: 1fr;
+        }
     }
 }
 
-.text{
+.contact-text{
     color: white;
+
+    h4{
+        font-size: 2em;
+        padding-bottom: 20px;
+    }
+    
+    p{
+        padding-bottom: 20px;
+    }
 }
 
-ul{
-    position: relative;
-    //left: 50%;
-    margin: 0 auto;
-}
+.contact-links{
+    justify-self: center;
 
-li{
-    width: 100%;
-    padding: 20px 0;
-
+    li{
+        width: 100%;
+        padding: 20px 0;
+    }
     .social-links{
         display: flex;
         align-items: center;
@@ -104,7 +118,7 @@ li{
     }
 
     p{
-        color: white;
+        color: $main-text;
         font-weight: bold;
         letter-spacing: 0.1em;
         margin-left: 20px;

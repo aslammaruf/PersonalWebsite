@@ -5,6 +5,11 @@
 
 $container-size: 70%;
 
+// Experience Section
+
+$line-thickness: 4px;
+$line-Color: #dddddd;
+$item-line-pos: 100px;
 
 // Colours
 
@@ -16,10 +21,12 @@ $footer-main: $header;
 $footer-secondary: #0B0C10;
 
 $main-text: #7C7C7C;
+$sec-text: #7C7C7C;
 $accent: #5EB1BF;
 
 $bg: #1F2833;
 $bg-secondary: #0B0C10;
+$bg-alt: #f6f6f6;
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -40,11 +47,19 @@ section{
     text-align: center;
 }
 
+.section-title h3{
+    text-align: center;
+    font-size: 1.17em;
+    color: $accent;
+    margin: 10px;
+}
+
 .section-hr{
     width: 10%;
     border: 2px solid $bg-secondary;
     margin: 50px auto;
 }
+
 
 /*
 html { font-size: 1em; }

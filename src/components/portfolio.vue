@@ -3,29 +3,22 @@
         <div class="page-wrapper">
             <div class="section-title">
                 <h2>{{ title }}</h2>
-                <h3>{{ subtitle }}</h3>
+                <h3 class="subtitle">{{ subtitle }}</h3>
                 <hr class="section-hr"/>
             </div>
-            <div class="section-content">
-                <div class="port" v-for="(port, id) in portfolio" :key="id">
-                    <div class="row">
-                        <div class="col">
-                            <img width="100%" :src="'/portPH.png'" />
-                        </div>
-
-                        <div class="col-8">
-                            <h4>{{ port.title }}</h4>
-                            <ul>
-                                <li v-for="(tag, id) in port.tags" :key="id">
-                                    {{ tag }}
-                                </li>
-                            </ul> 
-                            <p v-html="port.about"></p>
-                            <br/>
-                            <a class="btn" :href="'{{ port.demo }}'"><span><font-awesome-icon :icon="['fas','globe-europe']" size="1x"/> DEMO</span></a>
-                            <a class="btn" :href="'{{ port.code }}'" :disabled="port.btnDisableCode"><span><font-awesome-icon :icon="['fas','code']" size="1x"/> View Code</span></a>
-                            
-                        </div>
+            <div class="section-content" v-for="(port, id) in portfolio" :key="id" data-aos="fade-in" data-aos-delay="50" data-aos-offset="200" data-aos-duration="1000">
+                <div class="portImg">
+                    <img width="100%" :src="'/portPH.png'" />
+                </div>
+                <div class="portDesc">
+                    <h4>{{ port.title }}</h4>
+                    <ul>
+                        <li v-for="(tag, id) in port.tags" :key="id">{{ tag }}</li>
+                    </ul> 
+                    <p v-html="port.about"></p>
+                    <div class="links">
+                        <a :href="'{{ port.demo }}'"><span><font-awesome-icon :icon="['fas','globe-europe']" size="1x"/></span>Demo</a>
+                        <a :href="'{{ port.code }}'"><span><font-awesome-icon :icon="['fas','code']" size="1x"/></span>Code</a>          
                     </div>
                 </div>
             </div>
@@ -74,51 +67,83 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/_variables.scss';
+@import '@/assets/style/style.scss';
 
 section {
-    background-color: $Secondary-bg-Color;
-}
+    background-color: $bg-alt;
 
-h3{
-    text-align: center;
-    font-size: 1.17em;
-    color: $Accent-Color;
-    margin: 10px;
-}
-
-.port {
-    margin:100px 0;
-    
-    h4{
-        font-size: 1.13em;
-        color: $Secondary-Text-Color;
+    .section-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    li{
-        display: inline-block;
-        border: 1px solid $Accent-Color;
-        border-radius: 5px;
-        font-size: 0.5em;
-        padding: 10px;
-        margin: 10px;
+    .portImg, .portDesc{
+        padding: 2em;
     }
 
-    li:first-child{
-        margin-left: 0px;
+    .portDesc{
+        h4{
+            font-size: 1.7em;
+            font-weight: bold;
+        }
+
+        p{
+            padding-bottom: 20px;
+        }
+
+        ul{
+            padding: 20px 0;
+        }
+
+        li{
+            display: inline-block;
+            color: $main-text;
+            font-size: 0.7em;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 10px 10px 0px;
+            text-transform: uppercase;
+            border: 1px solid $bg;
+        }
+
+        .links{
+            span{
+                width: 25px;
+                display: inline-block;
+                padding: 0 5px;
+            }
+
+            a{
+                display: inline-block;
+                background: $bg;
+                color: white;
+                font-size: 0.7em;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                padding: 10px;
+                border-radius: 5px;
+                margin: 10px 10px 10px 0px;
+            }
+
+
+        }
+    }
+
+
+    @media screen and (max-width: 992px) {
+        .section-content{
+            grid-template-columns: 1fr;
+        }
+
+        .portImg, .portDesc{
+            padding: 2em 0;
+        }
     }
 }
 
-.btn{
-    background: $Accent-Color;
-    padding: 10px;
-    margin-right: 20px;
-    border-radius: 5px;
-    font-size: 0.75em;
 
-    :hover{
-        color: $Secondary-bg-Color;
-    }
-}
+
 
 </style>

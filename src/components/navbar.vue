@@ -31,7 +31,7 @@ export default {
                 { value: "Skills", link: "#skills" },
                 { value: "Portfolio", link: "#portfolio" },
                 { value: "Experience", link: "#experience" },
-                { value: "Contact Me", link: "#contact" },
+                { value: "Contact Me", link: "#footer" },
             ],
             menuopen: false,
         }

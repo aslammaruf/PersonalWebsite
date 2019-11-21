@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEnvelope, faCode , faGlobeEurope } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
@@ -17,6 +19,7 @@ library.add(
   faGlobeEurope
 )
 
+AOS.init();
 new Vue({
   render: h => h(App),
 }).$mount('#app')

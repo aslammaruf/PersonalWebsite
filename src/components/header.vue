@@ -1,14 +1,14 @@
 <template>
     <div id="page-header">
         <div class="header-container">
-            <div class="header-text">
-                <h1 class="page-title">Hi, i am Aslam !</h1>
+            <div class="header-text" data-aos="fade-right" data-aos-duration="3000">
+                <h1 class="page-title">Hi, I'm Aslam.</h1>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
                 </p>
             </div>
-            <div class="header-image">
+            <div class="header-image" data-aos="fade-in" data-aos-duration="3000">
                 <img src="/portPH.png">
             </div>
         </div>

@@ -7,8 +7,8 @@
             </div>
             <div class="section-content">
                 <div class="tl">
-                    <div class="tl-container"><span />
-                        <div class="tl-item" v-for="(exp, id) in experience" :key="id">
+                    <div class="tl-container"><span>
+                        <div class="tl-item" v-for="(exp, id) in experience" :key="id" >
                             <div class="content">
                                 <img src="portPH.png" />
                                 <div class="text">
@@ -18,7 +18,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </span></div>
                 </div>
             </div>
         </div>
@@ -62,11 +62,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/_variables.scss';
-
-$line-thickness: 4px;
-$line-Color: #dddddd;
-$item-line-pos: 100px;
+@import '@/assets/style/style.scss';
 
 .tl-container{
     position: relative;
@@ -113,6 +109,7 @@ $item-line-pos: 100px;
 }
 
 .tl-item{
+    box-sizing: border-box;
     padding: 10px 40px;
     position: relative;
     background-color: inherit;
@@ -127,7 +124,7 @@ $item-line-pos: 100px;
             width: 0;
             right: 0px;
             border: medium solid $line-Color;
-            border-width: $line-thickness/2 0 $line-thickness/2 50px;
+            border-width: $line-thickness/2 0 $line-thickness/2 45px;
         }
     }
 
@@ -146,7 +143,7 @@ $item-line-pos: 100px;
         }
 
         &::after{ // Circle Position 
-            left: -12px;
+            left: -16px;
         }
     }
 
@@ -155,10 +152,10 @@ $item-line-pos: 100px;
             position: absolute;
             width: 24px;
             height: 24px;
-            right: -12px;
+            right: -16px;
             background-color: $line-Color;
-            border: 4px solid $Accent-Color;
-            top: $item-line-pos;
+            border: 4px solid $accent;
+            top: 97px;
             border-radius: 50%;
             z-index: 1;
     }
@@ -166,9 +163,10 @@ $item-line-pos: 100px;
 }
 
 .content { // timeline - item
-    background-color: $Secondary-bg-Color;
     position: relative;
-    border-radius: 6px;
+    box-shadow: 0 0 60px 0 rgba(0,0,0,.04);
+    border: 1px solid #eee;
+    border-radius: 10px;
 
     img{
         width: 100%;
@@ -185,13 +183,13 @@ $item-line-pos: 100px;
 // text styling
 h3{
     text-align: center;
-    color: $Secondary-Text-Color;
+    color: $sec-text;
     font-size: 1.13em;
 }
 
 .place{
     text-align: center;
-    color: $Accent-Color;
+    color: $accent;
     font-size: 0.75em;
     padding: 20px 0;
 }
@@ -201,6 +199,11 @@ h3{
 }
 
 @media (max-width: 992px) {
+    .page-wrapper{
+        max-width: 100% !important;
+        margin: 0;
+    }
+
     .tl-container{
         width: 100%;
 
@@ -235,12 +238,12 @@ h3{
             left: 0%;
 
             &::after{ // Circle Position 
-                left: -12px;
+                left: -16px;
             }
         }
 
         &::after{ // Circle on Timeline
-                left: -12px;
+                left: -16px;
         }
 
     }

@@ -6,7 +6,7 @@
                 <hr class="section-hr" />
             </div>
             <div class="section-content">
-                <div class="tile">
+                <div class="tile" data-aos="fade-right" data-aos-delay="50" data-aos-offset="200" data-aos-duration="3000">
                     <font-awesome-icon :icon="['fab', 'github']" size="2x"/>
                     <hr />
                     <h4>Front End Developer</h4>
@@ -18,7 +18,7 @@
                         <li>Vue JS</li>
                     </ul>
                 </div>
-                <div class="tile">
+                <div class="tile" data-aos="fade-left" data-aos-delay="50" data-aos-offset="200" data-aos-duration="3000">
                     <font-awesome-icon :icon="['fab', 'github']" size="2x"/>
                     <hr />
                     <h4>Back End Developer</h4>
