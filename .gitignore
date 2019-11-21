@@ -19,3 +19,9 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+
+src/components/_header.vue
+src/components/_navbar.vue
+src/components/_portfolio.vue
+src/components/_footer.vue

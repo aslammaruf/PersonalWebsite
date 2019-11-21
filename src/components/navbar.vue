@@ -1,20 +1,24 @@
 <template>
-    <div class="navbar">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h3>Aslam<span>Maruf</span></h3>
-                </div>
-                <div class="col">
-                    <ul id="navbar-list">
-                        <li v-for="(nav, id) in navOptions" :key="id">
-                            <a :href="nav.link">{{ nav.value }}</a>
-                        </li>
-                    </ul>
+    <header id="navbar">
+        <div class="nav-container">
+            <div id="logo">
+                <h3>Aslam<span>Maruf</span></h3>
+            </div>
+            <div id="nav-items" :class="{ 'nav-open' : menuopen }">
+                <ul>
+                    <li v-for="(nav, id) in navOptions" :key="id">
+                        <a :href="nav.link">{{ nav.value }}</a>
+                    </li>
+                </ul>
+                <div id="nav-hamburger" :class="{ 'hamburger-close' : menuopen }" @click="menuopen = !menuopen">
+                    <span class="top-bar"></span>
+                    <span class="mid-bar"></span>
+                    <span class="bot-bar"></span>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
+
 </template>
 
 <script>
@@ -24,10 +28,12 @@ export default {
         return {
             navOptions: 
             [
-                { value: "About Me", link: "#about" },
+                { value: "Skills", link: "#skills" },
                 { value: "Portfolio", link: "#portfolio" },
+                { value: "Experience", link: "#experience" },
                 { value: "Contact Me", link: "#contact" },
-            ]
+            ],
+            menuopen: false,
         }
     }
 }
@@ -35,23 +41,105 @@ export default {
 
 
 <style lang="scss" scoped>
-@import '@/assets/style/_variables.scss';
+@import '@/assets/style/style.scss';
 
-.navbar{
-    padding: 20px 0;
-}
+header#navbar{
+    background: $header;
+    color: $navbar-text;
+    padding: 2rem;
+    font-size: 1.17em;
 
-ul{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    li{
-        padding: 0 20px;
+    .nav-container{
+        width: 80%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 20% 80%;
     }
 
-    li:last-child {
-        padding: 0px 0px 0 20px;
+    #logo{
+        font-weight: 100;
+        letter-spacing: 0.1em;
+        align-self: center;
+
+        span{
+            font-weight: bold;
+            color: $accent;
+        }
+    }
+
+    #nav-items{
+        margin-left: auto;
+            
+        ul{
+            display: block;
+            align-self: center;
+        }
+
+        li{
+            display: inline-block;
+            padding: 0 20px;
+        
+            &:last-child{
+                padding-right: 0px;
+            }
+        }
     }
 }
+
+#nav-hamburger{
+    display: none;
+
+    span{
+        transition: all linear 0.3s;
+        transform-origin: left center;
+        content: "";
+        background: white;
+        display: block;
+        height: 4px;
+        width: 34px;
+        border-radius: 3px;
+    }
+
+    .top-bar{
+        margin-bottom: 8px;
+    }
+
+    .bot-bar{
+        margin-top: 8px;
+    }
+}
+
+.hamburger-close{
+    .top-bar{
+        transform: rotate(45deg);
+        width: 39.5px;
+    }
+
+    .mid-bar{
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    .bot-bar{
+        transform: rotate(-45deg);
+        width: 39.5px;
+    }
+}
+
+@media (max-width: 992px) {
+    #navbar{
+        padding: 2rem 0.5rem !important;
+    }
+    #nav-items>ul{
+        display: none !important;
+    }
+
+    #nav-hamburger{
+        display: block;
+
+
+    }
+
+}
+
 </style>

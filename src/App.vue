@@ -32,31 +32,7 @@ export default {
 </script>
 
 <style lang="scss">
-  @import './assets/style/_variables.scss';
   @import './assets/style/reset.scss';
-  @import './assets/style/bootstrap-grid.css';
-  @import url('https://fonts.googleapis.com/css?family=Damion|Montserrat');
-  @import url('https://fonts.googleapis.com/css?family=Roboto');
-
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: $Main-bg-Color;
-    color: $Main-Text-Color;
-  }
-
-  section{
-      padding: 50px 0;
-  }
-
-  hr {
-    width: 10%;
-    margin: 40px auto;
-  }
-
-  h2{
-    text-align: center;
-    font-size: 1.5em;
-    color: $Secondary-Text-Color;
-    margin: 20px;
-  }
+  @import './assets/style/style.scss';
+  @import './assets/style/media.scss';
 </style>

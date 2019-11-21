@@ -1,14 +1,34 @@
 <template>
     <section id="contact" class="footer">
-        <div class="container">
-            <ul>
-                <li v-for="(icon, id) in icons" :key="id">
-                     <a class="social-links" :href="'{{ icon.link }}'"><font-awesome-icon :icon="[icon.type, icon.name]" size="1x"/></a>
-                </li>
-            </ul>
-
-            <p><span>Aslam Maruf</span> &copy; 2019</p>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col text">
+                        <h4>Want to get in touch</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt</p>
+                    </div>
+                    <div class="col">
+                        <ul class="social-links">
+                            <li v-for="(icon, id) in icons" :key="id">
+                                <a class="social-links" :href="'{{ icon.link }}'">
+                                    <div class="icon">
+                                        <font-awesome-icon :icon="[icon.type, icon.name]" size="2x"/>
+                                    </div>
+                                    <p>{{ icon.text }}</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>     
         </div>
+
+        <hr />
+
+        <div class="footer-bottom center">
+                <p>Website created by Aslam Maruf using VUE JS</p>
+        </div>
+
     </section>
 </template>
 
@@ -18,9 +38,9 @@ export default {
     data () {
         return {
             icons: [
-                { type: "fab", name: "github", link: "/", },
-                { type: "fab", name: "linkedin-in", link: "/", },
-                { type: "fas", name: "envelope", link: "/", }
+                { type: "fab", name: "github", link: "/", text: "View projects on Github" },
+                { type: "fab", name: "linkedin-in", link: "/", text: "on Linkedin" },
+                { type: "fas", name: "envelope", link: "/", text: "email@email.com"}
             ]
         }
     }
@@ -28,41 +48,73 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/style/_variables.scss';
+@import '@/assets/style/style.scss';
 
 section{
     padding: 0;
     margin: 0;
-}
-.footer{
-    padding: 50px 0;
-    background-color: $Secondary-bg-Color;
-    text-align: center;
-}
+    
 
-p {
-    color: $Main-Text-Color;
-    font-size: 0.75em;
-    margin-top: 50px;
-
-    span{
-        color: $Secondary-Text-Color;
+    .footer-top{
+        background-color: $footer-main;
+        padding: 50px 0;
     }
+    .footer-bottom{
+        background-color: $footer-secondary;
+        padding: 50px 0;
+        color: white;
+        font-weight: bold;
+    }
+
+    hr{
+        padding: auto;
+        margin: auto;
+        width: 100%;
+        border: 1px solid rgb(31, 32, 39);
+    }
+}
+
+.text{
+    color: white;
+}
+
+ul{
+    position: relative;
+    //left: 50%;
+    margin: 0 auto;
 }
 
 li{
-    display: inline-block;
-    background: $Main-bg-Color;
-    padding: 10px;
-    margin: 0 20px;
+    width: 100%;
+    padding: 20px 0;
 
     .social-links{
-        color: white;
+        display: flex;
+        align-items: center;
     }
 
-    a:hover{
-        color: $Accent-Color;
+    .icon{
+        text-align: center;
+        display: block;
+        width: 50px;
+    }
+
+    svg{
+        color: $accent;
+    }
+
+    p{
+        color: white;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        margin-left: 20px;
     }
 }
 
+a:hover{
+    p{
+        color: white;
+        transition: color 0.3s ease;
+    }
+}
 </style>

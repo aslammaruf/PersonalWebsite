@@ -1,21 +1,25 @@
 <template>
-    <section class="experience">
-        <div class="container">
-            <h2>Experience</h2>
-            <hr />
-            <div class="tl">
-                <div class="tl-container"><span>
-                    <div class="tl-item" v-for="(exp, id) in experience" :key="id">
-                        <div class="content">
-                            <img src="portPH.png" />
-                            <div class="text">
-                                <h3>{{ exp.title }}</h3>
-                                <p class="place ">{{ exp.place }} | {{ exp.fromYear }} - {{ exp.toYear }}</p>
-                                <p class="desc">{{ exp.desc }}</p>
+    <section id="experience">
+        <div class="page-wrapper">
+            <div class="section-title">
+                <h2>Experience</h2>
+                <hr class="section-hr"/>
+            </div>
+            <div class="section-content">
+                <div class="tl">
+                    <div class="tl-container"><span />
+                        <div class="tl-item" v-for="(exp, id) in experience" :key="id">
+                            <div class="content">
+                                <img src="portPH.png" />
+                                <div class="text">
+                                    <h3>{{ exp.title }}</h3>
+                                    <p class="place ">{{ exp.place }} | {{ exp.fromYear }} - {{ exp.toYear }}</p>
+                                    <p class="desc">{{ exp.desc }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </span></div>
+                </div>
             </div>
         </div>
     </section>
@@ -194,6 +198,53 @@ h3{
 
 .desc{
     text-align: justify;
+}
+
+@media (max-width: 992px) {
+    .tl-container{
+        width: 100%;
+
+        &::after{
+            left: 0px;
+        }
+
+         &::before{ // Line at top of timeline
+            left: 0%;
+        }
+
+        span {
+            &::before{ // line at bottom of timeline
+                left: 0%;
+            }
+        }
+    }
+
+    .tl-item{
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 100px;
+
+        &:nth-child(odd){
+            &::before{ // Line connecting item to timeline
+                position: absolute;
+                left: 0px;
+            }
+        }
+
+        &:nth-child(even){
+            left: 0%;
+
+            &::after{ // Circle Position 
+                left: -12px;
+            }
+        }
+
+        &::after{ // Circle on Timeline
+                left: -12px;
+        }
+
+    }
+
 }
 
 </style>

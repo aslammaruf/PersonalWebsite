@@ -1,28 +1,31 @@
 <template>
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2>{{ title }}</h2>
-            <h3>{{ subtitle }}</h3>
+    <section id="portfolio">
+        <div class="page-wrapper">
+            <div class="section-title">
+                <h2>{{ title }}</h2>
+                <h3>{{ subtitle }}</h3>
+                <hr class="section-hr"/>
+            </div>
+            <div class="section-content">
+                <div class="port" v-for="(port, id) in portfolio" :key="id">
+                    <div class="row">
+                        <div class="col">
+                            <img width="100%" :src="'/portPH.png'" />
+                        </div>
 
-            <hr />
-            <div class="port" v-for="(port, id) in portfolio" :key="id">
-                <div class="row">
-                    <div class="col">
-                        <img width="100%" :src="'/portPH.png'" />
-                    </div>
-
-                    <div class="col-8">
-                        <h4>{{ port.title }}</h4>
-                        <ul>
-                            <li v-for="(tag, id) in port.tags" :key="id">
-                                {{ tag }}
-                            </li>
-                        </ul> 
-                        <p v-html="port.about"></p>
-                        <br/>
-                        <a class="btn" :href="'{{ port.demo }}'"><span><font-awesome-icon :icon="['fas','globe-europe']" size="1x"/> DEMO</span></a>
-                        <a class="btn" :href="'{{ port.code }}'" :disabled="port.btnDisableCode"><span><font-awesome-icon :icon="['fas','code']" size="1x"/> View Code</span></a>
-                        
+                        <div class="col-8">
+                            <h4>{{ port.title }}</h4>
+                            <ul>
+                                <li v-for="(tag, id) in port.tags" :key="id">
+                                    {{ tag }}
+                                </li>
+                            </ul> 
+                            <p v-html="port.about"></p>
+                            <br/>
+                            <a class="btn" :href="'{{ port.demo }}'"><span><font-awesome-icon :icon="['fas','globe-europe']" size="1x"/> DEMO</span></a>
+                            <a class="btn" :href="'{{ port.code }}'" :disabled="port.btnDisableCode"><span><font-awesome-icon :icon="['fas','code']" size="1x"/> View Code</span></a>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
