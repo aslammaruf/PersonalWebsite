@@ -2,7 +2,14 @@
     <header id="navbar">
         <div class="nav-container">
             <div id="logo">
-                <h3>Aslam<span>Maruf</span></h3>
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+                    <path fill="none" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M90.5,324.5c0,0,0,17,17,17c46,0,82-216,82-216
+                        s52.1,216,54,252c1.3,24.8-5.6-145.9-189-125"/>
+                    <path fill="none" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M269.5,333.5c0,0,0,8,9,8c27,0,45-143,45-143
+                        s18,99,36,99s36-117,36-117l27,198"/>
+                    <rect fill="none" stroke="#000000" stroke-width="20" stroke-miterlimit="10" width="500" height="500"/>
+                </svg>
             </div>
             <div id="nav-items" :class="{ 'nav-open' : menuopen }">
                 <ul>
@@ -43,6 +50,26 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/style/style.scss';
 
+svg{
+    height: 100px;
+    
+    path, rect{
+        stroke: white;
+    }
+
+    rect{
+        opacity: 0;
+    }
+
+    &:hover{
+        rect{
+            opacity: 1;
+            transition: 0.3s all ease;
+        }
+    }
+}
+
+
 header#navbar{
     background: $header;
     color: $navbar-text;
@@ -65,11 +92,18 @@ header#navbar{
             font-weight: bold;
             color: $accent;
         }
+
+        object{
+            height: 50px;
+            display: inline-block;
+            fill: white;
+        }
     }
 
     #nav-items{
         margin-left: auto;
-            
+        align-self: center;
+        
         ul{
             display: block;
             align-self: center;

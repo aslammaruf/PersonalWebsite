@@ -3,7 +3,7 @@ import App from './App.vue'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faEnvelope, faCode , faGlobeEurope } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faCode , faGlobeEurope, faDatabase, faDesktop} from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -16,7 +16,10 @@ library.add(
   faEnvelope,
 
   faCode,
-  faGlobeEurope
+  faGlobeEurope,
+
+  faDatabase,
+  faDesktop
 )
 
 AOS.init();

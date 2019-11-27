@@ -35,4 +35,8 @@ export default {
   @import './assets/style/reset.scss';
   @import './assets/style/style.scss';
   @import './assets/style/media.scss';
+
+  html{
+    scroll-behavior: smooth;
+  }
 </style>

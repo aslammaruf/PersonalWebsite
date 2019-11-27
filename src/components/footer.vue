@@ -5,12 +5,12 @@
                 <div class="section-content">
                     <div class="contact-text">
                         <h4>Want to get in touch</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt</p>   
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt</p>  
                     </div>
                     <div class="contact-links">
                         <ul>
                             <li v-for="(icon, id) in icons" :key="id">
-                                <a class="social-links" :href="'{{ icon.link }}'">
+                                <a class="social-links" :href="icon.link">
                                     <div class="icon">
                                         <font-awesome-icon :icon="[icon.type, icon.name]" size="2x"/>
                                     </div>
@@ -37,9 +37,9 @@ export default {
     data () {
         return {
             icons: [
-                { type: "fab", name: "github", link: "/", text: "View projects on Github" },
-                { type: "fab", name: "linkedin-in", link: "/", text: "on Linkedin" },
-                { type: "fas", name: "envelope", link: "/", text: "email@email.com"}
+                { type: "fab", name: "github", link: "https://github.com/aslammaruf/", text: "View projects on Github" },
+                { type: "fab", name: "linkedin-in", link: "https://www.linkedin.com/in/aslam-maruf-a2b44ab8/", text: "on Linkedin" },
+                { type: "fas", name: "envelope", link: "mailto:aslamhmaruf@gmail.com", text: "or via Email"}
             ]
         }
     }

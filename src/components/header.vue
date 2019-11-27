@@ -27,7 +27,7 @@ export default {
 div#page-header{
     background: $header;
     color: $header-text;
-    height: calc( 100vh - 5rem );
+    height: calc( 100vh - 100px - 4rem );
     width: 100%;
 
     .header-container{

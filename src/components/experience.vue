@@ -10,7 +10,7 @@
                     <div class="tl-container"><span>
                         <div class="tl-item" v-for="(exp, id) in experience" :key="id" >
                             <div class="content">
-                                <img src="portPH.png" />
+                                <img :src="exp.img"/>
                                 <div class="text">
                                     <h3>{{ exp.title }}</h3>
                                     <p class="place ">{{ exp.place }} | {{ exp.fromYear }} - {{ exp.toYear }}</p>
@@ -34,6 +34,7 @@ export default {
                 { 
                     title: "Web Designer and Server Administrator",
                     place: "Trojan Warrior Fitness",
+                    img: "assets/imgs/TWF.png",
                     desc: `
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -46,6 +47,7 @@ export default {
                 { 
                     title: "BSc Computer Science",
                     place: "University of Greenwich",
+                    img: "assets/imgs/greenwichcampus.jpg",
                     desc: `
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 

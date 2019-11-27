@@ -8,7 +8,7 @@
             </div>
             <div class="section-content" v-for="(port, id) in portfolio" :key="id" data-aos="fade-in" data-aos-delay="50" data-aos-offset="200" data-aos-duration="1000">
                 <div class="portImg">
-                    <img width="100%" :src="'/portPH.png'" />
+                    <img width="100%" :src="port.img" />
                 </div>
                 <div class="portDesc">
                     <h4>{{ port.title }}</h4>
@@ -37,6 +37,7 @@ export default {
             [
                 { 
                     title: "Pypeline Website",
+                    img: "assets/imgs/portPW.png",
                     tags: [ "PHP", "SMARTY", "POSTGRES", "DOCKER", "JAVASCRIPT", "HTML & CSS"],
                     about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate <br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate",
                     demo: "/",
@@ -46,6 +47,7 @@ export default {
 
                 { 
                     title: "Discord Bot",
+                    img: "assets/imgs/portDiscord.png",
                     tags: [ "DISCORD JS", "NODE JS", "JAVASCRIPT"],
                     about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate <br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate",
                     demo: "/",
@@ -54,6 +56,7 @@ export default {
 
                 { 
                     title: "Personal Website",
+                    img: "assets/imgs/portPW.png",
                     tags: [ "VUE JS", "SCSS", "NPM"],
                     about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate <br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate",
                     demo: "/",
@@ -75,6 +78,11 @@ section {
     .section-content{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-content:nth-child(odd){
+        direction: rtl;
+        text-align: left;
     }
 
     .portImg, .portDesc{

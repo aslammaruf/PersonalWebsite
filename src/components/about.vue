@@ -7,7 +7,7 @@
             </div>
             <div class="section-content">
                 <div class="tile" data-aos="fade-right" data-aos-delay="50" data-aos-offset="200" data-aos-duration="3000">
-                    <font-awesome-icon :icon="['fab', 'github']" size="2x"/>
+                    <font-awesome-icon :icon="['fas', 'desktop']" size="2x"/>
                     <hr />
                     <h4>Front End Developer</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
@@ -19,7 +19,7 @@
                     </ul>
                 </div>
                 <div class="tile" data-aos="fade-left" data-aos-delay="50" data-aos-offset="200" data-aos-duration="3000">
-                    <font-awesome-icon :icon="['fab', 'github']" size="2x"/>
+                    <font-awesome-icon :icon="['fas', 'database']" size="2x"/>
                     <hr />
                     <h4>Back End Developer</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
