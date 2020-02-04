@@ -4,17 +4,23 @@
             <div id="logo">
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+                    <defs>
+                        <linearGradient id="grad" gradientTransform="rotate(45)">
+                        <stop class="main-stop" offset="5%"/>
+                        <stop class="alt-stop" offset="95%"/>
+                        </linearGradient>
+                    </defs>
                     <path fill="none" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M90.5,324.5c0,0,0,17,17,17c46,0,82-216,82-216
                         s52.1,216,54,252c1.3,24.8-5.6-145.9-189-125"/>
-                    <path fill="none" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M269.5,333.5c0,0,0,8,9,8c27,0,45-143,45-143
+                    <path  class="svgDelay" fill="none" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M269.5,333.5c0,0,0,8,9,8c27,0,45-143,45-143
                         s18,99,36,99s36-117,36-117l27,198"/>
-                    <rect fill="none" stroke="#000000" stroke-width="20" stroke-miterlimit="10" width="500" height="500"/>
+                    <rect fill="none" stroke="url('#grad')" stroke-width="20" stroke-miterlimit="10" width="500" height="500"/>
                 </svg>
             </div>
             <div id="nav-items" :class="{ 'nav-open' : menuopen }">
                 <ul>
                     <li v-for="(nav, id) in navOptions" :key="id">
-                        <a :href="nav.link">{{ nav.value }}</a>
+                        <a :href="nav.link" @click="menuopen = false">{{ nav.value }}</a>
                     </li>
                 </ul>
                 <div id="nav-hamburger" :class="{ 'hamburger-close' : menuopen }" @click="menuopen = !menuopen">
@@ -52,13 +58,26 @@ export default {
 
 svg{
     height: 100px;
-    
-    path, rect{
+    border: 1px solid linear-gradient(to left, $bg, $accent);
+
+    path{
         stroke: white;
     }
 
     rect{
-        opacity: 0;
+        opacity: 1;
+    }
+
+    #grad{
+        transform: rotate(45deg);
+    }
+
+    .main-stop{
+        stop-color: $bg;
+    }
+
+    .alt-stop{
+        stop-color: $accent;
     }
 
     &:hover{
@@ -118,10 +137,28 @@ header#navbar{
             }
         }
     }
+
+    .nav-open ul{
+        display: grid !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $accent;
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+        padding: 10rem 0 0 0;
+    }
+
+    .nav-open li{
+        display: block !important;
+        align-self: center;
+    }
 }
 
 #nav-hamburger{
     display: none;
+    z-index: 10;
 
     span{
         transition: all linear 0.3s;

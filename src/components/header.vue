@@ -9,7 +9,7 @@
                 </p>
             </div>
             <div class="header-image" data-aos="fade-in" data-aos-duration="3000">
-                <img src="/portPH.png">
+                <img src="assets/imgs/header-img.png">
             </div>
         </div>
     </div>
@@ -56,22 +56,20 @@ div#page-header{
 
     .header-image{
         place-self: center;
+        padding: 2rem;
 
         img{
             display: block;
-            width: 75%;
-            margin: auto;
+            width: 100%;
+            text-align: center;
         }
     }
 
     @media screen and (max-width: 992px) {
+        height: 100%;
 
         .header-container{
             grid-template-columns: 1fr;
-        }
-        
-        .header-image{
-            padding-bottom: 100px;
         }
     }
 }

@@ -38,5 +38,12 @@ export default {
 
   html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    letter-spacing: 1px;
+  }
+
+  p{
+    letter-spacing: 1px;
+    line-height: 1.5rem;
   }
 </style>
